@@ -1,6 +1,4 @@
 # program to check whether two strings are anagrams of each other
-
-
 def check_anagram(str1, str2):
     str_len1 = len(str1)
     str_len2 = len(str2)
@@ -17,12 +15,15 @@ def check_anagram(str1, str2):
     return 1
 
 
-s1 = input("enter the first word:")
-s2 = input("enter the second word:")
-op = check_anagram(s1, s2)
+if __name__ == "__main__":
+    try:
+        s1 = input("enter the first word:")
+        s2 = input("enter the second word:")
+        op = check_anagram(s1, s2)
 
-if op:
-    print("The two strings are anagram of each other")
-else:
-    print("The two strings are not anagram of each other")
-
+        if op:
+            print("The two strings are anagram of each other")
+        else:
+            print("The two strings are not anagram of each other")
+    except ValueError:
+        print("invalid input from user")
