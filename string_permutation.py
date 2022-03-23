@@ -12,13 +12,17 @@ def string_permutation_using_recursion(string, start, end):
             new_str[start] = new_str[x]
             new_str[x] = temp
             # print("new_str : ", new_str)
-
             string_permutation_using_recursion("".join(new_str), start + 1, end)   # recalling function
+    return
 
 
-perm_array = []
-input_str = input("enter any string : ")
-str_len = len(input_str)
-print("All the permutations of the string are : ")
-string_permutation_using_recursion(input_str, 0, str_len)
-print(perm_array)
+if __name__ == "__main__":
+    try:
+        perm_array = []
+        input_str = input("enter any string : ")
+        str_len = len(input_str)
+        print("All the permutations of the string are : ")
+        string_permutation_using_recursion(input_str, 0, str_len)
+        print(perm_array)
+    except ValueError:
+        print("invalid input from user")
